@@ -22,6 +22,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AI_Lab2.py" />
+    <Compile Include="Algorithm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="imports.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Individual.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Population.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Problem.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

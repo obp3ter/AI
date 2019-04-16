@@ -1,7 +1,4 @@
-from queue import PriorityQueue
-from copy import deepcopy
-from math import sqrt
-from itertools import groupby
+from UI import *
 
 
 def DGBFS( expand, solution,goodness,root, type=0):
@@ -38,8 +35,6 @@ def DGBFS( expand, solution,goodness,root, type=0):
             else:
                 print(error)
     return found,sol
-
-
 def exp_sudoku(root,n):
     l=[]
     croot=deepcopy(root)
@@ -50,7 +45,6 @@ def exp_sudoku(root,n):
                 l.append(deepcopy(croot))
             return l
     return l
-
 def sol_sudoku(ol,el):
     if el == [4,1,2,3,3,4]:
         print("hello")
@@ -98,16 +92,13 @@ def sol_sudoku(ol,el):
             
 
     return True
-
 def gdns_sudoku(li):
     a = deepcopy(li)
     a=sorted(a)
     while a[0]==0:
         a.pop(0)
     return [len(list(group)) for key, group in groupby(a)]
-    
-
-def sudoku1():
+    def sudoku1():
     flatten = lambda l: [item for sublist in l for item in sublist]
     li=[[3,0,0,2],[0,1,4,0],[1,2,0,4],[0,3,2,1]]
     s=0;
@@ -126,10 +117,15 @@ def sudoku1():
         if len(elc)==0:
                     break
     return olc
-
-
+'''
 def main():
     print("Hello")
     print(sudoku1())
+'''
+def main():
+    prb=Problem()
+    ctrl=Controller(prb)
+    ui=UI(ctrl)
+    ui.mainMenu()
 
 main()
