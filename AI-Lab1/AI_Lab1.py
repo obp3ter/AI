@@ -98,7 +98,7 @@ def gdns_sudoku(li):
     while a[0]==0:
         a.pop(0)
     return [len(list(group)) for key, group in groupby(a)]
-    def sudoku1():
+def sudoku1():
     flatten = lambda l: [item for sublist in l for item in sublist]
     li=[[3,0,0,2],[0,1,4,0],[1,2,0,4],[0,3,2,1]]
     s=0;
