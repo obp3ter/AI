@@ -2,6 +2,8 @@ from imports import *
 from Algorithm import *
 from Problem import *
 from Population import *
+from Swarm import *
+from Controller import *
 
 
 
@@ -139,7 +141,12 @@ def main1():
     pop = Population()
     alg=Algorithm(prob, pop)
     alg.run()
-    print(alg.population.v[0].x)
+    res = alg.population.v[0]
+
+    fitnessOptim=res.fittness(prob)
+    individualOptim=res.x
+    print('Result: The detectet minimum point is (%3.2f %3.2f) \n with function\'s value %3.2f'% \
+          (individualOptim[0],individualOptim[1], fitnessOptim) )
 
 
 def main2():
@@ -149,5 +156,25 @@ def main2():
     alg.statistics()
     plt.show()
 
+def main3():
+    prob= Problem()
+    pop = Swarm(prob)
+    ctrl=Controller()
+    res=ctrl.runAlg()
+    fitnessOptim=res.fitness
+    individualOptim=res.position
+    print('Result: The detectet minimum point is (%3.2f %3.2f) \n with function\'s value %3.2f'% \
+          (individualOptim[0],individualOptim[1], fitnessOptim) )
+
+def main4():
+    # Set-up hyperparameters
+    options = {'c1': C1, 'c2': C2, 'w':W}
+    # Call instance of PSO
+    optimizer = ps.single.GlobalBestPSO(n_particles=POP_SIZE, dimensions=IND_SIZE, options=options)
+    # Perform optimization
+    fitnessOptim, individualOptim = optimizer.optimize(lambda x: np.apply_along_axis(lambda a: Problem().function(a[0],a[1]) ,1 ,x), iters=NO_ITER)
+    
+    print('Result: The detectet minimum point is (%3.2f %3.2f) \n with function\'s value %3.2f'% \
+              (individualOptim[0],individualOptim[1], fitnessOptim) )
 
 main2()

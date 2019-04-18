@@ -25,16 +25,28 @@
     <Compile Include="Algorithm.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controller.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="imports.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Individual.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Particle.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Population.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Problem.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PSO.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Swarm.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
